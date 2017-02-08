@@ -1,0 +1,26 @@
+/*
+* Plan basic
+*/
+Step1: java script will generate emotion image. (in both side) (number of emotion)
+
+Step2: event (click) --> check righ? or wrong?
+  - true: turnback step1 + increase number of emotion
+  - false: game over
+/*
+* Detail Html
+*/
+create 2 body 
+/* 
+* Detail JavaScript
+*/
+Step1: 
+  setup variable
+  Do 1 times:
+    generate image emotion 
+    set atribute of image (random position)
+    append to left body 
+
+  Loop: (number of emotion)
+    generate image emotion 
+    set atribute of image (random position)
+    append to left body + right body 

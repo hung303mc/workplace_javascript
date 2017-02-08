@@ -1,0 +1,90 @@
+<html><head>
+  <title>Change the node</title>
+  <script>
+    function change_color1(){
+      document.childNodes[0].childNodes[2].childNodes[1].style.color = "red";
+    }
+    function change_color2(){
+      document.getElementsByTagName("h2")[0].style.color = "yellow";
+    }
+    function change_color3(){
+      /* Option1: normal */
+      // document.getElementById("hung_test").style.color = "blue";
+      /* Option2: Pratical tip */
+      the_node = document.getElementById("hung_test");
+      the_node.setAttribute("style","color:blue");
+    }
+    function insert_line(){
+      var new_item = document.createElement("hr");
+      var destParent = document.getElementsByTagName("body")[0];
+      destParent.insertBefore(new_item, destParent.childNodes[0]);
+    }
+    function add_text(){
+      var result = document.createTextNode("This is new content in paragraph");
+      document.getElementById("hung_test").appendChild(result);
+    }
+    function remove_line(){
+      this_node = document.getElementsByTagName("hr")[0];
+      this_node.parentNode.removeChild(this_node);
+    }
+    function remove_all_child_body(){
+      this_node = document.getElementsByTagName("body")[0];
+      while(this_node.childNodes[0]){
+        this_node.removeChild(this_node.childNodes[0]);
+      }
+    }
+    function clone_a_list(){
+      var this_node = document.getElementById("myList").lastChild;
+      var this_clone = this_node.cloneNode(true );
+      document.getElementById("myList").appendChild(this_clone);
+    }
+    function start_timer(){
+      var wait_duration;
+      wait_duration = prompt("How long you want to wakeup? (ms)");
+      setTimeout(wakeup_func,wait_duration);
+    }
+    var position_x = 200;
+    var the_image;
+    var the_timer1;
+    function start_timer1(){
+      the_image = document.getElementById("peDean");
+      position_x++;
+      the_image.style.left = position_x;
+      the_timer1 = setTimeout(start_timer1,100);
+    }
+    function stop_timer1(){
+      clearTimeout(the_timer1);
+    }
+    function wakeup_func(){
+      alert("Wakeup now!!!!");
+    }
+    function do_st_function(){
+      alert("Page has loaded");
+    }
+    /* Option1: Add event*/
+    // window.onload = do_st_function;
+    /* Option2: Add event by addEventListener*/
+    window.addEventListener("load",do_st_function);
+    // window.removeEventListener("load",do_st_function);
+  </script></head>
+  <body>
+  <h2 style="color:black" id="hung_test">
+    Click on the button to change the color
+  </h2>
+  <ul id="myList"><li>Good Morning</li> <li>Hello</li></ul>
+  <form>
+    <input onclick="change_color1()" type="button" value="change using method 1">
+    <input onclick="change_color2()" type="button" value="change using method 2">
+    <input onclick="change_color3()" type="button" value="change using method 3">
+    <input onclick="insert_line()" type="button" value="insert new line on body">
+    <input onclick="add_text()" type="button" value="Adding new text in paragraph">    
+    <input onclick="remove_line()" type="button" value="Remove line in body">    
+    <input onclick="remove_all_child_body()" type="button" value="Remove all child in body">    
+    <input onclick="clone_a_list()" type="button" value="clone a list">    
+    <input onclick="start_timer()" type="button" value="Start Timer in js">    
+    <input onclick="start_timer1()" type="button" value="Start Timer1 in js">
+    <input onclick="stop_timer1()" type="button" value="Stop Timer1 in js">
+    <img src="peDean.jpg" id="peDean" style="position: absolute;left: 200">     
+  </form>
+</body>
+</html>

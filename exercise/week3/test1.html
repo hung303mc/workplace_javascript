@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title> Javascript test Node </title>
+</head>
+  <body onload="Handle_Click()">
+    <script>
+      //processing function
+      function Handle_Click(event){
+      event.stopPropagation();
+
+      var node=event.target;
+      var thispath=node.nodename;
+
+      while(node.parentnode){
+        node = node.parentnode;
+        thispath = node.nodename + ">" + thispath;
+      }
+
+      alert(thispath);
+      }
+      // attach handler
+      function attachHandler(node){
+        if(node == null) return;
+        node.onclick = handleClick;
+
+        for(var i=node.childnodes.length-1; i >=0; i--)
+        {
+          attachHandler(node.childnodes[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
