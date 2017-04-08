@@ -33,26 +33,26 @@
       if(colors.indexOf(guessText) == -1)
       {
         // doesn't recognize
-        // alert("I can't recognize your color");
+        alert("I can't recognize your color");
         return false
       }
       else if(guessText > rightText){
-        // alert("Sorry, your guess is not correct!\n" 
-        //   + "Hint: Your color is alphabetically higher than mine");
+        alert("Sorry, your guess is not correct!\n" 
+          + "Hint: Your color is alphabetically higher than mine");
         return false;
       }
       else if(guessText < rightText){
-        // alert("Sorry, your guess is not correct!\n" 
-        //   + "Hint: Your color is alphabetically lower than mine");
+        alert("Sorry, your guess is not correct!\n" 
+          + "Hint: Your color is alphabetically lower than mine");
         return false;
       }
       else if(guessText == rightText){
         /*Change color background */
-        // myBody=document.getElementsByTagName("body")[0];
-        // myBody.style.background = rightText;
-        // setTimeout(function(){alert("Congratulation!, you are right! \n" 
-        //   + "You guess " + guessCount + " times \n" 
-        //   + "You coud see the color in backgroud");},200); 
+        myBody=document.getElementsByTagName("body")[0];
+        myBody.style.background = rightText;
+        setTimeout(function(){alert("Congratulation!, you are right! \n" 
+          + "You guess " + guessCount + " times \n" 
+          + "You coud see the color in backgroud");},200); 
         return true;
       }
     }
