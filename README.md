@@ -22,8 +22,10 @@ At the end of this course, you will be able to:
 
 ---
 ### Course 3: Front-End Javascript Frameworks: AngularJS Overview
-This lesson gives you a big picture view of the Full Stack Web Development and positions the current course in the overall structure of the specialization. This provides you the context for doing this course and sets the path forward in this course. The first video gives you an overview of full stack web development. You may skip this video if you have seen it already in the previous course. The second video gives you an overview of this course and the various topics to be covered in this course. The third video explains how to make the best use of the learning resources available in the course. You may skip this video if you have already seen it in the previous course. At the end of this lesson, you will be able to:
+Welcome to Front-End JavaScript Frameworks: AngularJS course. This course is the third in the series of courses that form part of the Full-Stack Web Development Specialization. This course will give you an overview of client-side JavaScript frameworks, in particular AngularJS. You will learn about AngularJS, the model-view-controller framework, Angular directives, filters, and controllers. You will design a single page application using AngularJS. You will learn about client-server communication between your Angular application and a RESTful server. You will also learn about Web tools like Grunt, Gulp and Yo, and Yeoman workflow.
 
-- [ ] Understand what is meant by full stack in the context of web development
-- [ ] Distinguish between front-end, back-end and full stack web development
-- [ ] Understand the position of this course in the context of this specialisation
+At the end of this course, you will be able to:
+
+- [ ] Set up, design and style a single page application using AngularJS
+- [ ] Enable client-server communication between your Angular application and a RESTful server
+- [ ] Make use of web tools to setup and manage your Angular application.
