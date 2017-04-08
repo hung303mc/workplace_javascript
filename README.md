@@ -19,3 +19,11 @@ At the end of this course, you will be able to:
 - [ ] Set up, design and style a web page using Bootstrap and its components
 - [ ] Create a responsive web page design
 - [ ] Make use of web tools to setup and manage web sites
+
+---
+### Course 3: Front-End Javascript Frameworks: AngularJS Overview
+This lesson gives you a big picture view of the Full Stack Web Development and positions the current course in the overall structure of the specialization. This provides you the context for doing this course and sets the path forward in this course. The first video gives you an overview of full stack web development. You may skip this video if you have seen it already in the previous course. The second video gives you an overview of this course and the various topics to be covered in this course. The third video explains how to make the best use of the learning resources available in the course. You may skip this video if you have already seen it in the previous course. At the end of this lesson, you will be able to:
+
+- [ ] Understand what is meant by full stack in the context of web development
+- [ ] Distinguish between front-end, back-end and full stack web development
+- [ ] Understand the position of this course in the context of this specialisation
