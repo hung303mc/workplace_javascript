@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>game extra face </title>
+  <h1>Matching Game</h1>
+  Click on the extra smiling face on the left
+  <style>
+    img {position:absolute;width:100px; height:100px;} 
+    div {position:absolute;width:500px; height:500px; background-color:green;} 
+    #rightSide { left: 500px; border-left: 1px solid black }
+  </style>
+</head>
+<body id="theBody" onload="start_game()">
+<body id="theBody">
+<div id ""></div>
+  <script>
+  var totalEmotion = 5;
+
+  function start_game(){
+    var topPos = 0, leftPos=0;
+    var imageId = 0;
+    var countEmotion = totalEmotion;
+    var theBody = document.getElementById("theBody");
+    while(countEmotion!=0){    
+      /* Prepare some atribute */
+      var topPos = Math.random()*400;
+      topPos = 100 + Math.floor(topPos);
+      var leftPos = Math.random()*400;
+      leftPos = Math.floor(leftPos);
+
+      countEmotion--;
+
+      /* Generate left image */
+      var leftImg = document.createElement("img");
+      if(countEmotion == 0){
+        leftImg.onclick = GamePass;
+      }
+      else{
+        leftImg.onclick = GameOver;
+      }
+      leftImg.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+      leftImg.id = "leftImg"+imageId;
+      leftImg.style.top = topPos+"px";
+      leftImg.style.left = leftPos+"px";
+      theBody.appendChild(leftImg);    
+
+      /* check whether is the last image */
+      if(countEmotion == 0){break;}
+
+      /* Generate right image */    
+      var rightImg = document.createElement("img");    
+      rightImg.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+      rightImg.id = "rightImg"+imageId
+      rightImg.style.top = topPos+"px";
+      rightImg.style.left = (leftPos+600)+"px";    
+      theBody.appendChild(rightImg);  
+
+      imageId++;  
+      }
+  }
+
+  function GamePass(){
+    GameRemove();
+    totalEmotion += 5;
+    start_game();
+  }
+
+  function GameRemove(){
+    var imageId = 0;
+    var countEmotion = totalEmotion;
+    while(countEmotion!=0){
+      var leftImg = document.getElementById("leftImg"+imageId);
+      theBody.removeChild(leftImg);
+      countEmotion--;
+      if(countEmotion == 0){break;}
+      var rightImg = document.getElementById("rightImg"+imageId);
+      theBody.removeChild(rightImg);    
+      imageId++;
+    }
+  }
+
+  function GameOver(){
+    GameRemove();
+    alert("gameOver");
+  }
+  </script>
+</body>
+</html>
